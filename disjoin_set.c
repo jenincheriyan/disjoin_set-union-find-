@@ -53,11 +53,33 @@ void unionSets(int x, int y) {
     printf("Union done between %d and %d\n", elements[x], elements[y]);
 }
 
+void displaySet(){
+    for (int i =0; i<n;i++){
+        printf("{%d}\n", elements[i]);
+    }
+}
+void displayAllSet(){
+    for (int i=0;i<n;i++){
+      if(parent[i]==i){
+        int value=parent[i];
+        printf("{");
+            for(int j=0;j<n;j++){
+                if(parent[j]==value){
+                printf("%d,", elements[j]);
+                }
+            }
+        printf("}\n");
+        }
+    }
 
+}
 void displayParents() {
-    printf("Parent array:\n");
-    for (int i = 0; i < n; i++)
-        printf("Element %d -> Parent %d\n", elements[i], elements[parent[i]]);
+    printf("Representative:\n");
+    for (int i = 0; i < n; i++){
+        if(parent[i]==i){
+            printf("{%d}\n", elements[parent[i]]);
+        }
+    }
 }
 
 int main() {
