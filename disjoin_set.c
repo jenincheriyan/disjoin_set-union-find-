@@ -94,12 +94,13 @@ int main() {
     }
 
     makeSet();
-    printf("Disjoint set created with %d elements.\n", n);
+    printf("Disjoint set created\n");
+    displaySet();
 
     while (choice!=4) {
         printf("1. Union\n");
         printf("2. Find\n");
-        printf("3. Display parent array\n");
+        printf("3. Display Representative\n");
         printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -114,6 +115,7 @@ int main() {
                     unionSets(idxX, idxY);
                 else
                     printf("Invalid elements.\n");
+                displayAllSet();
                 break;
 
             case 2:
